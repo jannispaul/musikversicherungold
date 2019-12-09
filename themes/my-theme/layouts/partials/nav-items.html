@@ -1,0 +1,9 @@
+<li{{ if eq .Permalink "/about/" }} class="active" {{ end }}>
+	<a href="{{ "/about" | absURL }}">About</a>
+</li>
+<li{{ if eq .Permalink "/another-page/" }} class="active" {{ end }}>
+	<a href="{{ "/another-page" | absURL }}">Another Page</a>
+</li>
+<li{{ if or (eq .Permalink "/articles/") (eq .Type "articles") }} class="active" {{ end }}>
+	<a href="{{ "/articles" | absURL }}">Articles</a>
+</li>
