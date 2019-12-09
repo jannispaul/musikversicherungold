@@ -17,7 +17,7 @@ caches:
 languageCode: "de-de"
 
 # Site title
-title: "My Site"
+title: "Musikversicherung.com"
 
 # theme to use (located by default in /themes/THEMENAME/)
 theme: "my-theme"

@@ -1,10 +1,10 @@
+</main>
 
-		</main>
+<footer>
+	<hr>
+	{{ partial "nav-footer.html" }}
+	<p>&copy; {{ dateFormat "2006" now }} {{ .Site.Title }}</p>
+</footer>
+</body>
 
-		<footer>
-			<hr>
-			{{ partial "nav-secondary.html" }}
-			<p>&copy; {{ dateFormat "2006" now }} {{ .Site.Title }}</p>
-		</footer>
-	</body>
 </html>

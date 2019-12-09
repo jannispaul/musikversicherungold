@@ -1,9 +1,12 @@
-<li{{ if eq .Permalink "/about/" }} class="active" {{ end }}>
-	<a href="{{ "/about" | absURL }}">About</a>
-</li>
-<li{{ if eq .Permalink "/another-page/" }} class="active" {{ end }}>
-	<a href="{{ "/another-page" | absURL }}">Another Page</a>
-</li>
-<li{{ if or (eq .Permalink "/articles/") (eq .Type "articles") }} class="active" {{ end }}>
-	<a href="{{ "/articles" | absURL }}">Articles</a>
-</li>
+<li{{ if eq .Permalink "/faq/" }} class="active" {{ end }}>
+	<a href="{{ "/faq" | absURL }}">FAQ</a>
+	</li>
+	<li{{ if eq .Permalink "/kontakt/" }} class="active" {{ end }}>
+		<a href="{{ "/kontakt" | absURL }}">Kontakt</a>
+		</li>
+		<li{{ if eq .Permalink "/anfrage/" }} class="active" {{ end }}>
+			<a href="{{ "/anfrage" | absURL }}">Jetzt anfragen</a>
+			</li>
+			{{/*  <li{{ if or (eq .Permalink "/articles/") (eq .Type "articles") }} class="active" {{ end }}>
+			<a href="{{ "/articles" | absURL }}">Articles</a>
+			</li> */}}
