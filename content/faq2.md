@@ -1,22 +1,12 @@
 ---
-title: "FAQ"
+title: "Angebot anfragen"
 date: 2018-01-11T16:03:33-05:00
 draft: false
 noTitle: true
 # layout: anfrage
-js: ["accordion"]
 ---
-<div itemscope itemtype="https://schema.org/FAQPage">
 <h1>Häufig gestellte Fragen</h1>
-
-{{% faq %}}
-
-</div>
-<!-- <button data-disclosure aria-controls="now-you-see-me" aria-expanded="false" hidden>Show More</button>
-<div id="now-you-see-me">
-	Now you don't.
-</div> -->
-<!-- <details>
+<details>
 	<summary>Besteht auch im Auto Versicherungsschutz?</summary>
 	<p>Ja. Es gibt jedoch eine Höchstentschädigung von 50.000 € (SINFONIMA) und 100.000 € (I’M SOUND)</p>
 </details>
@@ -72,4 +62,4 @@ js: ["accordion"]
 <details>
 	<summary>Ist mein Instrument auch versichert, wenn ich es verleihe?</summary>
 	<p>Ja.</p>
-</details> -->
+</details>

@@ -4,6 +4,11 @@
 	<hr>
 	{{ partial "nav-footer.html" }}
 	<p>&copy; {{ dateFormat "2006" now }} {{ .Site.Title }}</p>
+
+	<!-- Include scripts defined in individual page frontmatter -->
+	{{- range .Params.js }}
+	<script src="/js/{{ . }}.js"></script>
+	{{- end }}
 </footer>
 </body>
 

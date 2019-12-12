@@ -1,0 +1,11 @@
+{{  range $index, $element := .Site.Data.faq  }}
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <button itemprop="name" data-disclosure aria-controls="answer{{ $index }}"
+        aria-expanded="false">{{ $element.question }}</button>
+    <div id="answer{{ $index }}" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+            {{ $element.answer | markdownify }}
+        </div>
+    </div>
+</div>
+{{ end }}
