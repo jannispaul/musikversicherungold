@@ -1,0 +1,6 @@
+{{ range .Site.Data.reviews }}
+<h3>{{ .name }}</h3>
+<p>{{ .review }}</p>
+<p>{{ .rating }}</p>
+<p>{{ .date }}</p>
+{{ end }}

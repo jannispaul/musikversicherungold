@@ -1,0 +1,95 @@
+{{ partial "header-form.html" . }}
+<div>
+  <h1>
+    Wir freuen uns über Deine Bewertung!
+  </h1>
+  <form
+    method="POST"
+    action="https://mystaticman.herokuapp.com/v3/entry/github/jannispaul/musikversicherung/master/reviews"
+  >
+    <input
+      type="hidden"
+      name="options[redirect]"
+      value="https://musikversicherung.com/bewertung-erfolgreich"
+    />
+    <div>
+      <label htmlFor="customer-rating[star-1]">
+        <div>
+          X
+        </div>
+      </label>
+      <input
+        type="radio"
+        value="1"
+        name="fields[rating]"
+        id="customer-rating[star-1]"
+      />
+      <label htmlFor="customer-rating[star-2]">
+        <div>
+          O
+        </div>
+        <div>
+          X
+        </div>
+      </label>
+      <input
+        type="radio"
+        value="2"
+        name="fields[rating]"
+        id="customer-rating[star-2]"
+      />
+      <label htmlFor="customer-rating[star-3]">
+        <div>
+          O
+        </div>
+        <div>
+          X
+        </div>
+      </label>
+      <input
+        type="radio"
+        value="3"
+        name="fields[rating]"
+        id="customer-rating[star-3]"
+      />
+      <label htmlFor="customer-rating[star-4]">
+        <div>
+          O
+        </div>
+        <div>
+          X
+        </div>
+      </label>
+      <input
+        type="radio"
+        value="4"
+        name="fields[rating]"
+        id="customer-rating[star-4]"
+      />
+      <label htmlFor="customer-rating[star-5]">
+        <div>
+          O
+        </div>
+        <div>
+          X
+        </div>
+      </label>
+      <input
+        type="radio"
+        value="5"
+        name="fields[rating]"
+        id="customer-rating[star-5]"
+        defaultChecked
+      />
+    </div>
+    <label>
+      <span>Dein Name</span>
+      <input type="text" id="form[name]" name="fields[name]" required />
+    </label>
+    <label>
+      <span>Deine Rezension</span>
+      <textarea name="fields[review]" required></textarea>
+    </label>
+    <button>Absenden</button>
+  </form>
+</div>
