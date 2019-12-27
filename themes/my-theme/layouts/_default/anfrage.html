@@ -1,4 +1,6 @@
 {{ partial "header-form.html" . }}
+<link rel="stylesheet" href="/css/form.css" />
+
 <form id="regForm" action="/" data-auto-save>
   <h1>Anfrage:</h1>
   <!-- One "tab" for each step in the form: -->
@@ -7,7 +9,12 @@
     <h2>Start:</h2>
     <div class="switch">
       <p class="form__answer">
-        <input type="radio" name="type" value="sinfonima" id="choice-sinfonima" />
+        <input
+          type="radio"
+          name="type"
+          value="sinfonima"
+          id="choice-sinfonima"
+        />
         <label for="choice-sinfonima" data-sinfonima>
           Akustische Instrumente
         </label>
@@ -71,13 +78,19 @@
         </label>
         <div class="switch">
           <p class="form__answer">
-            <input type="radio" name="match" id="match_1" value="neuwert" checked>
+            <input
+              type="radio"
+              name="match"
+              id="match_1"
+              value="neuwert"
+              checked
+            />
             <label for="match_1">
               Neuwert
             </label>
           </p>
           <p class="form__answer">
-            <input type="radio" name="match" id="match_2" value="zeitwert">
+            <input type="radio" name="match" id="match_2" value="zeitwert" />
             <label for="match_2">
               Zeitwert
             </label>
@@ -89,7 +102,9 @@
         </label>
       </div>
     </div>
-    <button type="button" data-name="addInstrument">Weiteres Instrument hinzufügen</button>
+    <button type="button" data-name="addInstrument">
+      Weiteres Instrument hinzufügen
+    </button>
   </div>
 
   <div style="overflow:auto;">
@@ -110,9 +125,9 @@
   showTab(currentTab); // Display the current tab
 
   let instrumentCount = 1; // Instrument counter starts with 1 instrument
-  let incrementInstrumentCount = () => instrumentCount++;  // Increment instrument count
+  let incrementInstrumentCount = () => instrumentCount++; // Increment instrument count
 
-  // Add instrument 
+  // Add instrument
   function addInstrument() {
     // Increment count
     incrementInstrumentCount();
@@ -143,10 +158,10 @@
         </label>
       </div>`;
     // Add to DOM
-    document.querySelector('.instrument-list').insertAdjacentHTML('beforeend', singleInstrument);
+    document
+      .querySelector(".instrument-list")
+      .insertAdjacentHTML("beforeend", singleInstrument);
   }
-
-
 
   function showTab(n) {
     // This function will display the specified tab of the form...
@@ -164,7 +179,11 @@
       document.getElementById("nextBtn").innerHTML = "Next";
     }
     //... and run a function that will display the correct step indicator:
-    { {/*  fixStepIndicator(n);  */ } }
+    {
+      {
+        /*  fixStepIndicator(n);  */
+      }
+    }
   }
 
   function nextPrev(n) {
@@ -195,7 +214,7 @@
     tabs = document.getElementsByClassName("tab");
     {
       {
-        document.querySelectorAll('input[required]');
+        document.querySelectorAll("input[required]");
       }
     }
     // Set required inputs in tab
@@ -214,21 +233,21 @@
     return valid; // return the valid status
   }
 
-
   // Catch all clicks on form
-  document.addEventListener("click", function (event) {
-
+  document.addEventListener("click", function(event) {
     // If user clicks "add instrument"-buttton
     if (event.target.matches('button[data-name="addInstrument"]')) {
       // Disable "add instrument" button at 10 slots
       if (instrumentCount > 9) {
-        document.querySelector('button[data-name="addInstrument"]').setAttribute('disabled', 'disabled');
+        document
+          .querySelector('button[data-name="addInstrument"]')
+          .setAttribute("disabled", "disabled");
       }
       // Add instrument
       addInstrument();
 
       // Set focus to newly created instrument field
-      document.querySelector('.single-instrument:last-of-type input').focus();
+      document.querySelector(".single-instrument:last-of-type input").focus();
 
       // Get existing data from localStorage
       var saved = localStorage.getItem(storageID);
@@ -237,11 +256,10 @@
       saved.instrumentCount = instrumentCount;
       // Save the object back to localStorage
       localStorage.setItem(storageID, JSON.stringify(saved));
-
     }
     // Show / hide input andd price calculation for IM SOUND
     var totalValueLabel = document.getElementById("totalValue");
-    if (event.target.matches('[data-imsound]')) {
+    if (event.target.matches("[data-imsound]")) {
       // Reveal the hidden totalValue field...
       if (totalValueLabel.classList.contains("hidden")) {
         totalValueLabel.classList.remove("hidden");
@@ -251,7 +269,7 @@
       }
       return;
     }
-    if (event.target.matches('[data-sinfonima]')) {
+    if (event.target.matches("[data-sinfonima]")) {
       // Hide totalValue field
       if (!totalValueLabel.classList.contains("hidden")) {
         totalValueLabel.className += "hidden";
@@ -266,7 +284,7 @@
 
   // Automatically saving form
   // Variables
-  var storageID = 'form-auto-save';
+  var storageID = "form-auto-save";
 
   // Methods
   /**
@@ -274,8 +292,7 @@
    * @param  {Node}   field The field
    * @return {String}       The ID
    */
-  var getName = function (field) {
-
+  var getName = function(field) {
     if (field.name.length > 0) {
       return field.name;
     }
@@ -285,18 +302,14 @@
     return null;
   };
 
-
   // Load saved form data from localStorage
-  var loadData = function () {
-
+  var loadData = function() {
     // Get localStorage data
     var saved = localStorage.getItem(storageID);
     if (!saved) return;
     saved = JSON.parse(saved);
 
-
-
-    // Check if instruments had been added previously 
+    // Check if instruments had been added previously
     if (saved.instrumentCount != instrumentCount) {
       // Add instruments until the count is equal
       while (instrumentCount <= saved.instrumentCount) {
@@ -305,10 +318,11 @@
       }
     }
     // Get all of the form fields
-    var fields = document.querySelectorAll('[data-auto-save] input, [data-auto-save] textarea, [data-auto-save] select');
+    var fields = document.querySelectorAll(
+      "[data-auto-save] input, [data-auto-save] textarea, [data-auto-save] select"
+    );
     // Loop through each field and load any saved data in localStorage
-    Array.prototype.slice.call(fields).forEach(function (field) {
-
+    Array.prototype.slice.call(fields).forEach(function(field) {
       // If the field has no usable ID, skip it
       var name = getName(field);
       if (!name) return;
@@ -320,27 +334,23 @@
       // If it's a checkbox, set it's checked state
       // If it's a radio button and its value matches, set its checked state
       // Otherwise, set the value
-      if (field.type === 'checkbox') {
-        field.checked = saved[name] === 'on' ? true : false;
-      } else if (field.type === 'radio') {
+      if (field.type === "checkbox") {
+        field.checked = saved[name] === "on" ? true : false;
+      } else if (field.type === "radio") {
         field.checked = saved[name] === field.value ? true : false;
       } else {
         field.value = saved[name];
       }
-
-
-
     });
-
   };
 
   /**
    * Handle input events
    * @param  {Event} event The event object
    */
-  var inputHandler = function (event) {
+  var inputHandler = function(event) {
     // Only run for fields in the [data-auto-save] form
-    if (!event.target.closest('[data-auto-save]')) return;
+    if (!event.target.closest("[data-auto-save]")) return;
 
     // Get an ID for the field
     var name = getName(event.target);
@@ -353,39 +363,34 @@
     // Add the field to the localStorage object
     // If it's a checkbox, use on/off values
     // Otherwise, save the value
-    if (event.target.type === 'checkbox') {
-      saved[name] = event.target.checked ? 'on' : 'off';
+    if (event.target.type === "checkbox") {
+      saved[name] = event.target.checked ? "on" : "off";
     } else {
       saved[name] = event.target.value;
     }
     // Save the object back to localStorage
     localStorage.setItem(storageID, JSON.stringify(saved));
-
   };
 
   /**
    * Handle submit events
    * @param  {Event} event The event object
    */
-  var submitHandler = function (event) {
-
+  var submitHandler = function(event) {
     // Only run for the #save-me form
-    if (event.target.id !== 'save-me') return;
+    if (event.target.id !== "save-me") return;
 
     // Clear saved data
     localStorage.removeItem(storageID);
-
   };
-
-
 
   // Inits & Event Listeners
   // Load saved data from storage
   loadData();
 
   // Listen for input events
-  document.addEventListener('input', inputHandler, false);
+  document.addEventListener("input", inputHandler, false);
 
   // Listen for submit events
-  document.addEventListener('submit', submitHandler, false);
+  document.addEventListener("submit", submitHandler, false);
 </script>
