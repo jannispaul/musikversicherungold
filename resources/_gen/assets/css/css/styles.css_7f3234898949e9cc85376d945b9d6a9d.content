@@ -633,6 +633,10 @@ video {
 
 /* Site Specific */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #F8F5FF;
 }
@@ -663,6 +667,159 @@ body {
   font-size:1.2em;
   z-index:999;
 }
+
+ul,ol{
+  list-style: none;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+/* Accordion indicator styling */
+
+summary, 
+summary::-webkit-details-marker {
+  /* list-style-type: '+'; */
+  list-style: none;
+}
+
+/* summary::before { */
+
+/* content: "+";  */
+
+/* position: absolute;  */
+
+/* content: "\276F"; */
+
+/* } */
+
+/* 
+ol li:before { 
+    content: "+"; 
+    position: absolute; 
+    left: -5px;
+}
+ol li { 
+    text-indent: -5px; 
+} */
+
+/* Mark input boxes that gets an error on validation: */
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+
+.tab {
+  display: none;
+}
+
+button {
+  background: #6B46C1;
+  color: #F8F5FF;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+
+.step.finish {
+  background-color: #4caf50;
+}
+
+.hidden {
+  display: none;
+}
+
+.single-instrument:first-of-type {
+  display: none;
+}
+
+:disabled {
+  background: gray;
+  opacity: 0.8;
+}
+
+.single-instrument {
+  display: flex;
+}
+
+/* fieldset {
+  border: none;
+  display: flex;
+} */
+
+.switch {
+  display: flex;
+}
+
+/* Input style */
+
+input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+}
+
+input[type="radio"]:active ~ label {
+  opacity: 1;
+}
+
+input[type="radio"]:checked ~ label {
+  opacity: 1;
+  border: 1px solid #6B46C1;
+}
+
+/* .switch label {
+  border: 1px solid green;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px 30px 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+} */
+
+/* .switch label:hover,
+.switch label:focus,
+.switch label:active {
+  border: 1px solid green;
+} */
 
 /* Tailwind's utility classes - generated based on config file */
 

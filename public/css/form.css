@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+
+#regForm {
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid green;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: red;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4caf50;
+}
+.hidden {
+  display: none;
+}
+.single-instrument:first-of-type {
+  display: none;
+}
+
+:disabled {
+  background: gray;
+  opacity: 0.8;
+}
+
+.single-instrument {
+  display: flex;
+}
+
+/* fieldset {
+  border: none;
+  display: flex;
+} */
+
+.switch {
+  display: flex;
+}
+
+/* Input style */
+input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+}
+
+input[type="radio"]:active ~ label {
+  opacity: 1;
+}
+
+input[type="radio"]:checked ~ label {
+  opacity: 1;
+  border: 1px solid green;
+}
+
+.switch label {
+  border: 1px solid green;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px 30px 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+}
+/* .switch label:hover,
+.switch label:focus,
+.switch label:active {
+  border: 1px solid green;
+} */
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0ZGluIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usc0JBQXNCO0FBQ3hCOzs7QUFHQTtFQUNFLGtCQUFrQjtFQUNsQixvQkFBb0I7RUFDcEIsYUFBYTtFQUNiLFVBQVU7RUFDVixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsV0FBVztFQUNYLGVBQWU7RUFDZix1QkFBdUI7QUFDekI7O0FBRUEsdURBQXVEO0FBQ3ZEO0VBQ0UseUJBQXlCO0FBQzNCOztBQUVBLCtCQUErQjtBQUMvQjtFQUNFLGFBQWE7QUFDZjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixjQUFjO0VBQ2QsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2Ysb0JBQW9CO0VBQ3BCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUEsc0RBQXNEO0FBQ3REO0VBQ0UsWUFBWTtFQUNaLFdBQVc7RUFDWCxhQUFhO0VBQ2IseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIscUJBQXFCO0VBQ3JCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFVBQVU7QUFDWjs7QUFFQSxnREFBZ0Q7QUFDaEQ7RUFDRSx5QkFBeUI7QUFDM0I7QUFDQTtFQUNFLGFBQWE7QUFDZjtBQUNBO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTs7O0dBR0c7O0FBRUg7RUFDRSxhQUFhO0FBQ2Y7O0FBRUEsZ0JBQWdCO0FBQ2hCO0VBQ0UsVUFBVTtFQUNWLFFBQVE7RUFDUixTQUFTO0VBQ1Qsa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixPQUFPO0VBQ1AsWUFBWTtFQUNaLFdBQVc7QUFDYjs7QUFFQTtFQUNFLFVBQVU7QUFDWjs7QUFFQTtFQUNFLFVBQVU7RUFDVix1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSx1QkFBdUI7RUFDdkIsc0JBQXNCO0VBQ3RCLGNBQWM7RUFDZCxZQUFZO0VBQ1osV0FBVztFQUNYLDRCQUE0QjtFQUM1QixlQUFlO0VBQ2YsWUFBWTtFQUNaLGdDQUFnQztBQUNsQztBQUNBOzs7O0dBSUciLCJmaWxlIjoic3RkaW4iLCJzb3VyY2VzQ29udGVudCI6WyIqIHtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbn1cblxuXG4jcmVnRm9ybSB7XG4gIG1hcmdpbjogMTAwcHggYXV0bztcbiAgZm9udC1mYW1pbHk6IFJhbGV3YXk7XG4gIHBhZGRpbmc6IDQwcHg7XG4gIHdpZHRoOiA3MCU7XG4gIG1pbi13aWR0aDogMzAwcHg7XG59XG5cbmgxIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG5pbnB1dCB7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIHdpZHRoOiAxMDAlO1xuICBmb250LXNpemU6IDE3cHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGdyZWVuO1xufVxuXG4vKiBNYXJrIGlucHV0IGJveGVzIHRoYXQgZ2V0cyBhbiBlcnJvciBvbiB2YWxpZGF0aW9uOiAqL1xuaW5wdXQuaW52YWxpZCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmRkZGQ7XG59XG5cbi8qIEhpZGUgYWxsIHN0ZXBzIGJ5IGRlZmF1bHQ6ICovXG4udGFiIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuYnV0dG9uIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xuICBjb2xvcjogI2ZmZmZmZjtcbiAgYm9yZGVyOiBub25lO1xuICBwYWRkaW5nOiAxMHB4IDIwcHg7XG4gIGZvbnQtc2l6ZTogMTdweDtcbiAgZm9udC1mYW1pbHk6IFJhbGV3YXk7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuYnV0dG9uOmhvdmVyIHtcbiAgb3BhY2l0eTogMC44O1xufVxuXG4jcHJldkJ0biB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNiYmJiYmI7XG59XG5cbi8qIE1ha2UgY2lyY2xlcyB0aGF0IGluZGljYXRlIHRoZSBzdGVwcyBvZiB0aGUgZm9ybTogKi9cbi5zdGVwIHtcbiAgaGVpZ2h0OiAxNXB4O1xuICB3aWR0aDogMTVweDtcbiAgbWFyZ2luOiAwIDJweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2JiYmJiYjtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgb3BhY2l0eTogMC41O1xufVxuXG4uc3RlcC5hY3RpdmUge1xuICBvcGFjaXR5OiAxO1xufVxuXG4vKiBNYXJrIHRoZSBzdGVwcyB0aGF0IGFyZSBmaW5pc2hlZCBhbmQgdmFsaWQ6ICovXG4uc3RlcC5maW5pc2gge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNGNhZjUwO1xufVxuLmhpZGRlbiB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG4uc2luZ2xlLWluc3RydW1lbnQ6Zmlyc3Qtb2YtdHlwZSB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbjpkaXNhYmxlZCB7XG4gIGJhY2tncm91bmQ6IGdyYXk7XG4gIG9wYWNpdHk6IDAuODtcbn1cblxuLnNpbmdsZS1pbnN0cnVtZW50IHtcbiAgZGlzcGxheTogZmxleDtcbn1cblxuLyogZmllbGRzZXQge1xuICBib3JkZXI6IG5vbmU7XG4gIGRpc3BsYXk6IGZsZXg7XG59ICovXG5cbi5zd2l0Y2gge1xuICBkaXNwbGF5OiBmbGV4O1xufVxuXG4vKiBJbnB1dCBzdHlsZSAqL1xuaW5wdXRbdHlwZT1cInJhZGlvXCJdIHtcbiAgb3BhY2l0eTogMDtcbiAgd2lkdGg6IDA7XG4gIGhlaWdodDogMDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIGhlaWdodDogMjVweDtcbiAgd2lkdGg6IDI1cHg7XG59XG5cbmlucHV0W3R5cGU9XCJyYWRpb1wiXTphY3RpdmUgfiBsYWJlbCB7XG4gIG9wYWNpdHk6IDE7XG59XG5cbmlucHV0W3R5cGU9XCJyYWRpb1wiXTpjaGVja2VkIH4gbGFiZWwge1xuICBvcGFjaXR5OiAxO1xuICBib3JkZXI6IDFweCBzb2xpZCBncmVlbjtcbn1cblxuLnN3aXRjaCBsYWJlbCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGdyZWVuO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBkaXNwbGF5OiBibG9jaztcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTBweCAxMHB4IDMwcHggMTBweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBvcGFjaXR5OiAwLjU7XG4gIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2UtaW4tb3V0O1xufVxuLyogLnN3aXRjaCBsYWJlbDpob3Zlcixcbi5zd2l0Y2ggbGFiZWw6Zm9jdXMsXG4uc3dpdGNoIGxhYmVsOmFjdGl2ZSB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGdyZWVuO1xufSAqL1xuIl19 */

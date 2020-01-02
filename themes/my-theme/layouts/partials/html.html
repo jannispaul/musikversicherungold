@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+
 {{ partial "head.html" . }}
 
 <body class="type-{{ .Type }} {{ if .IsPage }}page-single{{ else }}page-list{{ end }}" id="page-{{ .File.UniqueID }}">
