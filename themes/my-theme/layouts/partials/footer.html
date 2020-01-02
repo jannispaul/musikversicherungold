@@ -1,10 +1,33 @@
 </main>
 
-<footer>
-	<hr>
-	{{ partial "nav-footer.html" }}
-	<p>&copy; {{ dateFormat "2006" now }} {{ .Site.Title }}</p>
+<footer class="text-primary">
+	<hr class="border-2 border-primary">
+	<div class="flex items-stretch">
+		<h3 class="flex-1 ">Kontakt</h3>
+		<a href="tel:+4951919313199" class="flex-1 ">Tel: 05191 931 31 99</a>
+		<a href="mailto:info@musikversicherung.com" class="flex-1 ">info@musikversicherung.com</a>
+	</div>
+	<hr class="border-2 border-primary">
+	<div class="flex items-stretch">
 
+		<p class="flex-1">
+			Heiner Blaskewitz<br />
+			Versicherungsfachmann (BWV)<br />
+			Generalagentur der Mannheimer Versicherung AG
+		</p>
+		<p class="flex-1">
+			SINFONIMA® und IM SOUND sind <br />
+			eingetragene Marken der <br />
+			Mannheimer Versicherung AG
+		</p>
+	</div>
+	<hr class="border-2 border-primary">
+	<nav>
+		{{/*  {{ partial "nav-items.html" . }} */}}
+		<a href="/impressum">Impressum</a> • <a href="/datenschutz">Datenschutz</a> • <a
+			href="/versicherungsbedingungen">Versicherungsbedingungen</a> • {{ partial "nav-footer.html" }} <span>&copy;
+			{{ dateFormat "2006" now }} {{ .Site.Title }}</span>
+	</nav>
 	<!-- Include scripts defined in individual page frontmatter -->
 	{{- range .Params.js }}
 	<script src="/js/{{ . }}.js"></script>
