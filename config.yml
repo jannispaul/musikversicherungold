@@ -1,5 +1,5 @@
 # hostname (and path) to the root
-baseURL: "localhost:1313"
+baseURL: "https://keen-noether-e3b890.netlify.com"
 
 # Customer parameters
 params:
@@ -22,10 +22,23 @@ title: "Musikversicherung.com"
 # theme to use (located by default in /themes/THEMENAME/)
 theme: "my-theme"
 
+menu:
+  main:
+    - identifier: faq
+      name: FAQ
+      title: FAQ
+      url: /faq
+      weight: 10
+    - identifier: kontakt
+      name: Kontakt
+      title: Kontakt
+      url: /kontakt
+      weight: 10
+
 # Permalinks
 # See "content-management/permalinks"
 permalinks:
-  articles: /:title/
+  # articles: /:title/
 
 # Use absolute URLs
 canonifyURLs: true

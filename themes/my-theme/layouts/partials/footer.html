@@ -30,7 +30,10 @@
 	</nav>
 	<!-- Include scripts defined in individual page frontmatter -->
 	{{- range .Params.js }}
-	<script src="/js/{{ . }}.js"></script>
+	<!--Concat path with filename given in md file-->
+	{{ $path := printf "js/%s.js" .}}
+	{{ $js := resources.Get $path | resources.Minify | resources.Fingerprint }}
+	<script src="{{ $js.Permalink }}"></script>
 	{{- end }}
 </footer>
 </body>

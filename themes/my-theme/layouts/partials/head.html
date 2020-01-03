@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 
     {{ $styleMain := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styleMain.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+    <link rel="stylesheet" href="{{ $styleMain.Permalink }}" integrity="{{ $styleMain.Data.Integrity }}">
     {{ $styleForm := resources.Get "css/form.css" | postCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styleForm.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+    <link rel="stylesheet" href="{{ $styleForm.Permalink }}" integrity="{{ $styleForm.Data.Integrity }}">
 
 
     {{ end }}
